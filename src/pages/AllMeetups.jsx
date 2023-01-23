@@ -10,7 +10,7 @@ const AllMeetups = () => {
     const fetchData = async () => {
       setIsLoading(true);
       const res = await fetch(
-        "https://meetup-f4070-default-rtdb.asia-southeast1.firebasedatabase.app/meetups.json"
+        "https://638ef4d34ddca317d7ea4b6b.mockapi.io/contact/meetup"
       );
       const data = await res.json();
       const meetups = [];
@@ -36,7 +36,11 @@ const AllMeetups = () => {
     <section>
       <h1>All Meetups</h1>
 
-      <MeetupList meetup={loadedMeetupData} />
+      {Boolean(loadedMeetupData.length) ? (
+        <MeetupList meetup={loadedMeetupData} />
+      ) : (
+        <h3>No Meetups</h3>
+      )}
     </section>
   );
 };

@@ -6,16 +6,13 @@ const NewMeetups = () => {
   const navigate = useNavigate();
 
   const addMeetup = (meetupData) => {
-    fetch(
-      "https://meetup-f4070-default-rtdb.asia-southeast1.firebasedatabase.app/meetups.json",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(meetupData),
-      }
-    ).then(() => navigate("/", { replace: true }));
+    fetch("https://638ef4d34ddca317d7ea4b6b.mockapi.io/contact/meetup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(meetupData),
+    }).then(() => navigate("/", { replace: true }));
   };
   return (
     <section>
